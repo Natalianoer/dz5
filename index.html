@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Секундомер</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="all-container">
+      <div class="block-timer">
+        <div id="minuts">
+          <span id="min">00:</span>
+        </div>
+        <div id="secunds">
+          <span id="sec">00.<span id="milisec">00</span></span>
+        </div>
+        <div id="milisecunds">
+          <!-- <span id="milisec">00</span> -->
+        </div>
+      </div>
+      <div class="block-button">
+        <button id="reset" class="reset" type="button" name="button">Сброс</button>
+        <button id="circle" class="circle" type="button" name="button">Круг</button>
+        <button id="start" class="start" type="button" name="button">Старт</button>
+        <button id="stop" class="stop" type="button" name="button">Стоп</button>
+      </div>
+      <div id="circleText" class="circleText"></div>
+    </div>
+    <script type="text/javascript" src="script.js"></script>
+  </body>
+</html>
