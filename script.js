@@ -25,16 +25,19 @@ function creatStop() {
 }
 start.addEventListener('click', function () {
   creatStart();
-  getTime();
+  getTimer();
 });
 stop.addEventListener('click', function () {
   creatStop();
   stopTimer();
 });
+reset.addEventListener('click', function () {
+  resetTimer();
+});
 
 var currentTimer;
 //Калькулятор времени
-function getTime() {
+function getTimer() {
   currentTimer = setInterval(start_time, 0);
   function start_time(status) {
       var this_date = new Date();
@@ -48,7 +51,8 @@ function getTime() {
         if (sec.toString().length   == 1) sec   = '0' + sec;
         if (min.toString().length   == 1) min   = '0' + min;
         minuts.innerHTML = (min + ':');
-        secunds.innerHTML = sec + '.' + '<span id="milisec">' + milisec + '</span>';
+        secunds.innerHTML = (sec + '.');
+        milisecunds.innerHTML = milisec;
       },100);
     };
 };
@@ -57,7 +61,11 @@ function stopTimer() {
   clearTimeout(currentTimer);
 }
 
-
+function resetTimer() {
+  minuts.innerHTML = '00:';
+  secunds.innerHTML = "00.";
+  milisecunds.innerHTML = "00";
+}
 
 // function createTime(timeType) {//создаем блоки для отображения времени
 //   var timeCircle = document.creatElement("div");
