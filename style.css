@@ -72,8 +72,13 @@ button:hover {
 .stop, .circle {
   display: none;
 }
-.timeCircle {
+.timeCircle, p {
   font-size: 36px;
   color: #00008B;
   font-weight: 700;
+}
+p {
+  display: inline-block;
+  margin-right: 40px;
+  color: #800080;
 }
