@@ -13,7 +13,6 @@
   align-items: center;
 }
 .all-container div {
-  margin-right: 15px;
   position: relative;
 }
 .all-container div:last-child {
@@ -34,11 +33,17 @@
   width: 100%;
   justify-content: center;
 }
+.circleText {
+  width: 100%;
+  text-align: center;
+}
 button {
   padding: 15px 40px;
   margin-right: 15px;
   font-size: 24px;
   font-weight: 700;
+  border-radius: 10px;
+  color: #FFF0F5;
 }
 button:last-child {
   margin-right: 0;
@@ -51,11 +56,14 @@ button:hover {
   background-color: #5F9EA0;
 }
 .start {
-  background-color: #B0C4DE;
+  background-color: #483D8B;
 }
 .stop {
   background-color: #8B0000;
   color: white;
+}
+.pause {
+  background-color: #2F4F4F;
 }
 .circle {
   background-color: #CD5C5C;
@@ -63,4 +71,9 @@ button:hover {
 }
 .stop, .circle {
   display: none;
+}
+.timeCircle {
+  font-size: 36px;
+  color: #00008B;
+  font-weight: 700;
 }

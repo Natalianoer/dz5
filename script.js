@@ -34,6 +34,9 @@ stop.addEventListener('click', function () {
 reset.addEventListener('click', function () {
   resetTimer();
 });
+circle.addEventListener('click', function () {
+  circleTimer();
+})
 
 var currentTimer;
 //Калькулятор времени
@@ -58,35 +61,53 @@ function getTimer() {
 };
 
 function stopTimer() {
-  clearTimeout(currentTimer);
+    clearInterval(currentTimer);
+    status = true;
+}
+
+function pauseTimer() {
+  if (status == true) {
+    clearInterval(currentTimer);
+    getTimer();
+    status = false;
+  }
 }
 
 function resetTimer() {
   minuts.innerHTML = '00:';
   secunds.innerHTML = "00.";
   milisecunds.innerHTML = "00";
+  circleText.innerHTML = "";
 }
 
+function circleTimer() {
+  var timeCircle = document.createElement("p");
+  timeCircle.className = "timeCircle";
+  circleText.appendChild(timeCircle);
+  timeCircle.innerHTML = minuts.innerHTML + secunds.innerHTML + milisecunds.innerHTML;
+}
+
+
 // function createTime(timeType) {//создаем блоки для отображения времени
-//   var timeCircle = document.creatElement("div");
+//   var timeCircle = document.createElement("div");
 //   timeCircle.className = "timeCircle";
-//   timeBlock.appenChild(timeCircle);
+//   timeBlock.appendChild(timeCircle);
 //   timeCircle.innerHTML = (timeType);
 // };
 //
 // function createBlock(type) {
-//   var timeBlock = document.creatElement("div");
+//   var timeBlock = document.createElement("div");
 //   timeBlock.className = "timeBlock";
-//   circleText.appenChild(timeBlock);
+//   circleText.appendChild(timeBlock);
 //
-//   var lamText = document.creatElement("div");
+//   var lamText = document.createElement("div");
 //   lamText.className = "lamText";
-//   timeBlock.appenChild(lamText);
+//   timeBlock.appendChild(lamText);
 //   lamText.innerHTML = (type);
 //
-//   createTime(minutes);
+//   createTime(minuts);
 //   createTime(' : ');
-//   createTime(seconds);
-//   createTime(' : ');
-//   createTime(milliseconds);
+//   createTime(secunds);
+//   createTime(' . ');
+//   createTime(milisecunds);
 // }
